@@ -1,0 +1,651 @@
+/* General Styles */
+body {
+    font-family:Georgia, 'Times New Roman', Times, serif; /* Updated font for modern look */
+    background-color: #f9f9f9;
+    color: #1d1d1d;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+/* Sidebar Layout */
+#sidebar {
+    width: 220px;
+    background: linear-gradient(45deg, #005f51, #17b6a1); /* Gradient for sidebar */
+    padding-top: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 200%;
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+
+.tablinks {
+    width: 80%;
+    padding: 15px 10px;
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    margin: 15px auto;
+    cursor: pointer;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 25px;
+    display: block;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.tablinks:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* Main Content Area */
+#main-content {
+    margin-left: 220px; /* Offset content by width of sidebar */
+    padding: 40px;
+    width: calc(100% - 220px); /* Take up the remaining width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.tab-content {
+    display: none; /* Hide all tab content by default */
+}
+
+#home {
+    display: block; /* Show only the home tab initially */
+}
+
+
+/* Text Decorations */
+
+
+header h1 {
+    text-align: center;
+    color: #02816e;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 95, 81, 0.2);
+    font-size: 2.5rem;
+}
+
+header h2 {
+    text-align: center;
+    color: #d2640a;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+/* Input Fields */
+input[type="text"], input[type="number"] {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    border-color: #17b6a1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+/* Buttons */
+button {
+    width: auto;
+    padding: 12px;
+    background: linear-gradient(45deg, #066355, #1e7e70);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #1e7e70, #066355);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Lists */
+#shopping-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+#shopping-list li {
+    padding: 15px;
+    background-color: #ffffff;
+    margin: 8px 0;
+    border-radius: 10px;
+    border-left: 5px solid #17b6a1;
+    font-size: 1rem;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+#shopping-list li:hover {
+    transform: scale(1.02);
+}
+
+/* List Page Styling */
+#list {
+    background-color: #e8f5e9; /* Soft green background */
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#list h2 {
+    text-align: center;
+    color: #00695c; /* Dark green */
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+#list-page-items {
+    list-style: none;
+    padding: 0;
+}
+
+#list-page-items li {
+    background-color: #ffffff;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border-left: 5px solid #66bb6a; /* Green accent */
+    font-size: 1.1rem;
+    color: #333;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+#list-page-items li:hover {
+    transform: scale(1.05);
+    background-color: #dcedc8; /* Light green on hover */
+}
+
+
+/* Budget Status */
+#budget-status {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#budget-status.green {
+    color: #32cd32;
+}
+
+#budget-status.red {
+    color: #ff4c4c;
+}
+
+
+
+/* Recommendations Section */
+#recommendations-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+#recommendations-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #005f51;
+    text-align: center;
+}
+
+#recommendations-section p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+
+
+/* Dark Mode */
+/* body.dark-mode {
+    background-color: #222;
+    color: #e0e0e0;
+}
+
+.tablinks.dark-mode {
+    background-color: #444;
+    color: #e0e0e0;
+}
+
+.tablinks.dark-mode:hover {
+    background-color: #666;
+}
+
+.tabcontent.dark-mode {
+    background-color: #444;
+    color: #e0e0e0;
+} */
+
+body.dark-mode {
+    background-color: #222;
+    color: #e0e0e0;
+}
+
+.tablinks.dark-mode {
+    background-color: #444;
+    color: #e0e0e0;
+}
+
+.tablinks.dark-mode:hover {
+    background-color: #666;
+}
+
+.tab-content.dark-mode {
+    background-color: #444;
+    color: #e0e0e0;
+}
+
+
+
+/* Settings Page Styling */
+#settings {
+    background-color: #e8f5e9; /* Soft green background */
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#settings h2 {
+    text-align: center;
+    color: #00695c; /* Dark green */
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+#settings label {
+    font-size: 1.2rem;
+    color: #333;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#settings input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.3); /* Slightly larger checkboxes */
+}
+
+#settings div {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #ffffff; /* Light white block */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+#settings div:hover {
+    background-color: #dcedc8; /* Light green on hover */
+}
+
+/* Dark Mode for Settings */
+#settings.dark-mode {
+    background-color: #444; /* Darker background for settings */
+    color: #e0e0e0;
+}
+
+#settings.dark-mode h2 {
+    color: #e0e0e0;
+}
+
+#settings.dark-mode label {
+    color: #e0e0e0;
+}
+
+#settings.dark-mode input[type="checkbox"] {
+    transform: scale(1.5);
+}
+
+#settings.dark-mode div {
+    background-color: #555; /* Darker background for settings blocks */
+}
+
+#settings.dark-mode div:hover {
+    background-color: #666; /* Slightly lighter background on hover */
+}
+
+
+/* Tutorial Page Styling */
+#tutorial {
+    background-color: #f1f8e9; /* Soft green background */
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#tutorial h2 {
+    text-align: center;
+    color: #00695c; /* Dark green */
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+#tutorial p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+#tutorial ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+#tutorial li {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#tutorial .step {
+    background-color: #ffffff;
+    padding: 15px;
+    border-left: 5px solid #66bb6a; /* Green accent */
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+#tutorial .step:hover {
+    transform: scale(1.02);
+    background-color: #dcedc8; /* Light green on hover */
+}
+
+#tutorial .step h3 {
+    color: #02816e; /* Darker green */
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#tutorial .step p {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+}
+
+
+/* Dark Mode for Tutorial */
+#tutorial.dark-mode {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+#tutorial.dark-mode h2,
+#tutorial.dark-mode .step h3 {
+    color: #e0e0e0; /* Light text for headings in dark mode */
+}
+
+#tutorial.dark-mode li {
+    color: #e0e0e0;
+}
+
+#tutorial.dark-mode .step {
+    background-color: #444;
+    border-left: 5px solid #66bb6a; /* Light green accent */
+}
+
+#tutorial.dark-mode .step:hover {
+    background-color: #555;
+}
+
+/* Rewards Page Styling */
+#rewards {
+    background-color: #e8f5e9; /* Soft green background */
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#rewards h2 {
+    text-align: center;
+    color: #00695c; /* Dark green */
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+#reward-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+#reward-info p {
+    font-size: 1.5rem;
+    color: #28a745; /* Green color for points */
+    font-weight: bold;
+}
+
+#badges-list {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+#badges-list li {
+    background: linear-gradient(135deg, #ffb74d, #ff7043);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, background 0.3s;
+}
+
+#badges-list li:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #ff7043, #ffb74d);
+}
+
+#badges-list li.active {
+    background: linear-gradient(135deg, #00bcd4, #00796b); /* Different color for active badges */
+}
+
+/* Dark Mode for Rewards Page */
+#rewards.dark-mode {
+    background-color: #333; /* Darker background for rewards */
+    color: #e0e0e0;
+}
+
+#rewards.dark-mode h2 {
+    color: #e0e0e0;
+}
+
+#rewards.dark-mode p {
+    color: #4caf50; /* Light green color for points */
+}
+
+#rewards.dark-mode #badges-list li {
+    background: linear-gradient(135deg, #607d8b, #455a64); /* Darker color for badges */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#rewards.dark-mode #badges-list li:hover {
+    background: linear-gradient(135deg, #455a64, #607d8b);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #badges-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #badges-list li {
+        margin: 5px 0;
+        width: auto;
+    }
+}
+ 
+
+/* Store Map */
+#store-map {
+    width: 100%;
+    height: auto;
+    background: #e8f5e9; /* Background marked for new section */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #66bb6a; /* Differentiating border for visualization */
+}
+
+#store-map h2 {
+    text-align: center;
+    color: #005f51;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-decoration: underline;
+    background-color: #f9f9f9; /* Slight contrast for heading */
+}
+
+/* Highlighted Section for Items in Store Map */
+.category {
+    background-color: #fffbe6; /* Light yellow background to differentiate new section */
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Slightly darker shadow for emphasis */
+    padding: 15px;
+}
+
+.category h3 {
+    color: #02816e;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.category ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.category ul li {
+    background-color: #e8f5e9; /* Soft green background */
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border-left: 5px solid #66bb6a; /* Highlight for each item */
+    font-size: 1rem;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.category ul li:hover {
+    transform: scale(1.02);
+    background-color: #dcedc8; /* Slight highlight on hover */
+}
+
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+/* Title styling */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* Container to hold all the categories */
+.category-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Styling for each category */
+.category {
+    flex: 1 1 22%;
+    margin: 10px;
+    padding: 15px;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+/* Styling for category heading */
+.category h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* List styling */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/* Styling for each list item */
+li {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #34495e;
+}
+
+/* Responsive styling: Stack categories vertically on smaller screens */
+@media (max-width: 768px) {
+    .category {
+        flex: 1 1 48%;
+    }
+}
+
+@media (max-width: 480px) {
+    .category {
+        flex: 1 1 100%;
+    }
+}
+

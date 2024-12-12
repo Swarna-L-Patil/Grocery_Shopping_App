@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Grocery Shopping Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="sidebar">
+        <button class="tablinks" onclick="openPage(event, 'home')">Home</button>
+        <button class="tablinks" onclick="openPage(event, 'list')">List</button>
+        <button class="tablinks" onclick="openPage(event, 'map')">Store Map</button>
+        <button class="tablinks" onclick="openPage(event, 'settings')">Settings</button>
+        <button class="tablinks" onclick="openPage(event, 'gamification')">Rewards</button>
+        <button class="tablinks" onclick="openPage(event, 'tutorial')">Tutorial</button>
+    </div>
+
+    <div id="main-content">
+        <!-- Home Page -->
+        <div id="home" class="tab-content">
+            <header>
+                
+                <h1>Welcome to the Smart Grocery Shopping Assistant</h1>
+                <h2>Effortlessly Manage Your Grocery List, Stay On Budget, and Discover Great Recommendations!</h2>
+                <!-- <div class="logo">
+                    <img src="https://img.freepik.com/premium-photo/fresh-healthy-groceries-shopping-basket_605022-9899.jpg" alt="Smart Grocery Assistant Logo" id="logo">
+                </div>   -->
+            </header>
+
+            <div id="item-selection">
+                <h2>Create Your Shopping List</h2>
+                <label for="item">Item:</label>
+                <input type="text" id="item" placeholder="Enter item name" />
+                <br />
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" min="1" placeholder="Enter quantity" />
+                <br />
+                <label for="price">Price per Unit:</label>
+                <input type="number" id="price" min="0" placeholder="Enter price per unit" />
+                <br />
+                <button id="add-item">Add Item</button>
+            </div>
+        
+            <div id="shopping-list">
+                <h3>Your Shopping List</h3>
+                <ul id="list-items"></ul>
+
+                <div id="total">
+                    <p>Total Cost: ₹<span id="total-cost">0.00</span></p>
+                </div>
+                
+                <label for="budget">Enter Your Budget:</label>
+                <input type="number" id="budget" min="0" placeholder="Enter your budget" />
+
+                <div id="budget-status"></div>
+            </div>
+            <div id="recommendations-section" style="display: none;">
+                <h3>Recommended Products</h3>
+                <div id="recommendations-list"></div>
+            </div>
+        </div>
+
+        <!-- List Page -->
+        <div id="list" class="tab-content">
+            <h2>Your Shopping List</h2>
+            <ul id="list-page-items"></ul>
+
+            <!-- <select id="list-selector"></select> -->
+            <!-- <ul id="list-page-items"></ul> -->
+            <button id="new-list">Create New List</button>
+            <button id="share-list">Share List</button>
+        </div>
+
+
+        <!-- Store Map -->
+        <div id="map" class="tab-content">
+            <!-- <h2>Store Navigation</h2>
+            <div id="store-map"></div>
+            <div id="aisle-navigation">
+                <ul id="aisle-list"></ul>
+                <button id="reset-map">Reset Navigation</button> -->
+                <h1>Category List</h1>
+
+    <div class="category-container">
+        <div class="category">
+            <h2>Fruits</h2>
+            <ul>
+                <li>Apple</li>
+                <li>Banana</li>
+                <li>Orange</li>
+                <li>Grapes</li>
+                <li>Pineapple</li>
+                <li>Mango</li>
+                <li>Strawberry</li>
+                <li>Blueberry</li>
+                <li>Kiwi</li>
+                <li>Pear</li>
+            </ul>
+        </div>
+
+        <div class="category">
+            <h2>Vegetables</h2>
+            <ul>
+                <li>Carrot</li>
+                <li>Potato</li>
+                <li>Spinach</li>
+                <li>Broccoli</li>
+                <li>Cauliflower</li>
+                <li>Cabbage</li>
+                <li>Tomato</li>
+                <li>Cucumber</li>
+                <li>Onion</li>
+                <li>Bell Pepper</li>
+            </ul>
+        </div>
+
+        <div class="category">
+            <h2>Dairy</h2>
+            <ul>
+                <li>Milk</li>
+                <li>Cheese</li>
+                <li>Butter</li>
+                <li>Yogurt</li>
+                <li>Cream</li>
+                <li>Paneer</li>
+                <li>Ghee</li>
+                <li>Ice Cream</li>
+                <li>Custard</li>
+            </ul>
+        </div>
+
+        <div class="category">
+            <h2>Snacks</h2>
+            <ul>
+                <li>Chips</li>
+                <li>Cookies</li>
+                <li>Crackers</li>
+                <li>Popcorn</li>
+                <li>Nachos</li>
+                <li>Pretzels</li>
+                <li>Trail Mix</li>
+                <li>Granola Bars</li>
+                <li>Rice Cakes</li>
+            </ul>
+        </div>
+
+        <div class="category">
+            <h2>Grains</h2>
+            <ul>
+                <li>Wheat</li>
+                <li>Jowar</li>
+                <li>Ragi</li>
+                <li>Rice</li>
+                <li>Moong Dal</li>
+                <li>Urad Dal</li>
+                <li>Barley</li>
+                <li>Oats</li>
+                <li>Quinoa</li>
+                <li>Maize</li>
+            </ul>
+        </div>
+
+        <div class="category">
+            <h2>Beverages</h2>
+            <ul>
+                <li>Water</li>
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Juice</li>
+                <li>Soda</li>
+                <li>Milkshake</li>
+                <li>Smoothie</li>
+                <li>Lemonade</li>
+                <li>Iced Tea</li>
+            </ul>
+        </div>
+
+        <div class="category">
+            <h2>Meat</h2>
+            <ul>
+                <li>Chicken</li>
+                <li>Beef</li>
+                <li>Pork</li>
+                <li>Lamb</li>
+                <li>Fish</li>
+                <li>Turkey</li>
+                <li>Duck</li>
+                <li>Sausages</li>
+                <li>Bacon</li>
+            </ul>
+        </div>
+
+        <div class="category">
+            <h2>Baked Goods</h2>
+            <ul>
+                <li>Bread</li>
+                <li>Croissant</li>
+                <li>Muffins</li>
+                <li>Cake</li>
+                <li>Cookies</li>
+                <li>Bagels</li>
+                <li>Pastries</li>
+                <li>Pizza</li>
+                <li>Donuts</li>
+            </ul>
+        </div>
+
+        <div class="category">
+            <h2>Spices</h2>
+            <ul>
+                <li>Cumin</li>
+                <li>Turmeric</li>
+                <li>Coriander</li>
+                <li>Garlic Powder</li>
+                <li>Ginger</li>
+                <li>Black Pepper</li>
+                <li>Cinnamon</li>
+                <li>Cardamom</li>
+                <li>Cloves</li>
+            </ul>
+        </div>
+
+        <div class="category">
+            <h2>Nuts and Seeds</h2>
+            <ul>
+                <li>Almonds</li>
+                <li>Cashews</li>
+                <li>Walnuts</li>
+                <li>Peanuts</li>
+                <li>Sunflower Seeds</li>
+                <li>Pumpkin Seeds</li>
+                <li>Chia Seeds</li>
+                <li>Flaxseeds</li>
+            </ul>
+        </div>
+            </div>
+        </div>
+
+        <!-- <div id="store-map" class="tab-content">
+            <h2>Store Map</h2>
+            <div id="store-categories"></div>
+        </div>
+         -->
+        
+
+        <!-- Settings Page -->
+        <div id="settings" class="tab-content">
+            <h2>Settings</h2>
+            <div>
+                <label for="recommendations-toggle">Enable Recommendations</label>
+                <input type="checkbox" id="recommendations-toggle" />
+            </div>
+            <div>
+                <label for="theme-toggle">Switch to Dark Mode</label>
+                <input type="checkbox" id="theme-toggle" />
+            </div>
+            <div>
+                <label for="voice-toggle">Enable Voice Commands</label>
+                <input type="checkbox" id="voice-toggle" />
+            </div>
+        </div>
+
+        <!-- Tutorial Page -->
+        <div id="tutorial" class="tab-content">
+            <h2>How to Use the Smart Grocery Shopping Assistant</h2>
+            <p>Welcome to the Smart Grocery Shopping Assistant! This app is designed to help you create and manage your shopping list, track your spending, and get personalized product recommendations. Here's a step-by-step guide on how to use the app:</p>
+
+            <div class="step">
+                <h3>1. Create Your Shopping List</h3>
+                <p>Start by entering the name, quantity, and price of the items you want to purchase. You can add multiple items to your shopping list and view them in real-time.</p>
+                <ul>
+                    <li>Enter the item name (e.g., "Apple", "Milk", etc.).</li>
+                    <li>Specify the quantity you need (e.g., "2" apples).</li>
+                    <li>Set the price per unit of the item.</li>
+                    <li>Click "Add Item" to add the item to your shopping list.</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h3>2. View Your Shopping List</h3>
+                <p>Your added items will appear under the "Shopping List" section. You can review your items, their quantities, and their prices.</p>
+                <ul>
+                    <li>Each item will be listed with its quantity and total cost (quantity × price per unit).</li>
+                    <li>The total cost of all your items is displayed at the bottom.</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h3>3. Set Your Budget</h3>
+                <p>Enter your total budget in the "Budget" input field to track whether your spending exceeds your budget.</p>
+                <ul>
+                    <li>Once you add items, the app will automatically check if you're within your budget.</li>
+                    <li>If your total cost exceeds your budget, you will be alerted with a red warning.</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h3>4. Enable Recommendations</h3>
+                <p>If you want to receive product suggestions based on the items you add to your list, you can enable the recommendations feature.</p>
+                <ul>
+                    <li>Toggle the "Enable Recommendations" checkbox to turn on product suggestions.</li>
+                    <li>Recommendations will appear below your shopping list based on the category of the item you add (e.g., fruits, vegetables, dairy, etc.).</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h3>5. Switch Between Light and Dark Mode</h3>
+                <p>You can switch between light mode and dark mode for a better viewing experience based on your preference.</p>
+                <ul>
+                    <li>Toggle the "Switch to Dark Mode" checkbox in the settings to enable dark mode.</li>
+                    <li>The app's background and text color will change to dark mode to reduce eye strain.</li>
+                </ul>
+            </div>
+
+            <p>That's it! You are now ready to start using the Smart Grocery Shopping Assistant and manage your grocery shopping efficiently.</p>
+        </div>
+
+
+        <div id="recommendations-section" style="display: none;">
+            <h3>Recommended Products</h3>
+            <div id="recommendations-list"></div>
+        </div>
+
+        <!-- Gamification Page -->
+        <div id="gamification" class="tab-content">
+            <h2>Your Rewards</h2>
+            <p>Points Earned: <span id="reward-points">0</span></p>
+            <ul id="badges-list"></ul>
+            <!-- <button id="view-achievements">View Achievements</button> -->
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
